@@ -1,17 +1,11 @@
 services:
   zpush:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "8880:80"
     volumes:
-      - ./z-push/config:/usr/share/z-push/config:ro
-      - ./z-push/backend:/usr/share/z-push/backend:ro
-      - ./nginx/z-push.conf:/etc/nginx/conf.d/z-push.conf:ro
-      - ./php/php.ini:/etc/php/8.1/fpm/php.ini:ro
-      - ./logs/nginx:/var/log/nginx
-      - ./logs/php:/var/log/php
-    environment:
-      TZ: "Europe/Rome"
+      - ./z-push/z-push.conf.php:/etc/z-push/z-push.conf.php
+      - ./z-push/imap.conf.php:/etc/z-push/imap.conf.php
+      - ./z-push/caldav.conf.php:/etc/z-push/caldav.conf.php
+      - ./z-push/carddav.conf.php:/etc/z-push/carddav.conf.php
     # restart: unless-stopped
