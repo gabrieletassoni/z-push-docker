@@ -1,5 +1,5 @@
 <?php
-define('TIMEZONE', 'UTC');
+define('TIMEZONE', 'Europe/Rome');
 define('BACKEND_PROVIDER', 'BackendIMAP');
 define('LOGFILEDIR', '/var/log/z-push/');
 define('LOGFILE', LOGFILEDIR . 'z-push.log');
@@ -10,10 +10,10 @@ define('USE_FULLEMAIL_FOR_LOGIN', true);
 define('ALLOW_SYNC_OBJECTS', true);
 define('SYNC_MAX_ITEMS', 512);
 define('SYNC_FILESIZE_MAX', 10485760);
-define('SMTP_SERVER', 'smtp.example.com');
-define('SMTP_PORT', 587);
+define('SMTP_SERVER', '192.168.121.106');
+define('SMTP_PORT', 25);
 define('SMTP_AUTH', true);
-define('SMTP_LOGIN', 'your-smtp-username');
-define('SMTP_PASSWORD', 'your-smtp-password');
-define('SMTP_SSL', true);
+define('SMTP_LOGIN', 'imap_username');
+define('SMTP_PASSWORD', 'imap_password');
+define('SMTP_SSL', false);
 ?>

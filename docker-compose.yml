@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
-  z-push:
+  zpush:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "8880:80"
     volumes:
       - ./z-push/config:/usr/share/z-push/config:ro
       - ./z-push/backend:/usr/share/z-push/backend:ro
@@ -15,5 +13,5 @@ services:
       - ./logs/nginx:/var/log/nginx
       - ./logs/php:/var/log/php
     environment:
-      TZ: "UTC"
-    restart: unless-stopped
+      TZ: "Europe/Rome"
+    # restart: unless-stopped

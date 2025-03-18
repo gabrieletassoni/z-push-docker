@@ -1,5 +1,5 @@
-# Start with an Ubuntu 22.04 base image
-FROM ubuntu:22.04
+# Start with an Ubuntu 24.04 base image
+FROM ubuntu:24.04
 
 # Set environment variables for non-interactive installation
 ENV DEBIAN_FRONTEND=noninteractive
@@ -27,7 +27,7 @@ RUN apt-get update && apt-get upgrade -y && \
     php-bcmath \
     php-zip \
     nginx \
-    z-push && \
+    z-push z-push-backend-combined z-push-backend-caldav z-push-backend-carddav z-push-backend-kopano z-push-backend-imap z-push-common && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
