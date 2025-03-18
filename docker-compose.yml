@@ -6,6 +6,4 @@ services:
     volumes:
       - ./z-push/z-push.conf.php:/etc/z-push/z-push.conf.php
       - ./z-push/imap.conf.php:/etc/z-push/imap.conf.php
-      - ./z-push/caldav.conf.php:/etc/z-push/caldav.conf.php
-      - ./z-push/carddav.conf.php:/etc/z-push/carddav.conf.php
-    # restart: unless-stopped
+    restart: unless-stopped
